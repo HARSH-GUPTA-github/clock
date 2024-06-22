@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #ddf;
+}
+.container{
+    position: relative;
+}
+.clock{
+    position: relative;
+    height: 50rem;
+    width: 50rem;
+    border-radius: 50%;
+    border: 0.8rem solid #000050;
+    background: #000050;
+    box-shadow: 0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.8),
+                inset 0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.8),
+                inset -0.5rem -0.5rem 1.5rem rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: #000050;
+    border: 0.3rem solid #fff;
+    z-index: 1000;
+}
+.clock span{
+    position: absolute;
+    inset: 1rem;
+    text-align: center;
+    font-size: 4rem;
+    transform: rotate(calc(30deg*(var(--i))));
+    color: #fff;
+}
+.clock .hr{
+    position: absolute;
+    border-radius: 50%;
+    height: 25rem;
+    width: 25rem;
+}
+.clock .mn{
+    position: absolute;
+    border-radius: 50%;
+    height: 30rem;
+    width: 30rem;
+}
+.clock .sc{
+    position: absolute;
+    border-radius: 50%;
+    height: 35rem;
+    width: 35rem;
+}
+.hr, .mn, .sc{
+    display: flex;
+    justify-content: center;
+}
+.clock .hr::before{
+    content: '';
+    position: absolute;
+    width: 0.8rem;
+    height: 12.5rem;
+    background: #fff;
+    border-radius: 0.8rem 0.8rem 0 0;
+    z-index: 10;
+}
+.clock .mn::before{
+    content: '';
+    position: absolute;
+    width: 0.8rem;
+    height: 15rem;
+    background: #fff;
+    border-radius: 0.8rem 0.8rem 0 0;
+    z-index: 50;
+}
+.clock .sc::before{
+    content: '';
+    position: absolute;
+    width: 0.5rem;
+    height: 20rem;
+    background: #f00;
+    border-radius: 0.5rem;
+    z-index: 100;
+}
+
+
+
+@media (max-width: 1024px){
+    html{
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 768px){
+    html{
+        font-size: 37.5%;
+    }
+}
+
+@media (max-width: 540px){
+    html{
+        font-size: 25%;
+    }
+}
+
+@media (max-width: 320px){
+    html{
+        font-size: 15%%;
+    }
+}
+
+@media (max-width: 150px){
+    html{
+        font-size: 5%%;
+    }
+}
